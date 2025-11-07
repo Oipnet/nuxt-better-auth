@@ -34,11 +34,19 @@ jobs:
         run: npm run test:coverage
 
       - name: Upload coverage reports to Codecov
+        if: ${{ secrets.CODECOV_TOKEN != '' }}
         uses: codecov/codecov-action@v5
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           fail_ci_if_error: false
         continue-on-error: true
+
+      - name: Coverage Notice (No Codecov Token)
+        if: ${{ secrets.CODECOV_TOKEN == '' }}
+        run: |
+          echo "ℹ️ Codecov upload skipped - no token configured"
+          echo "Coverage reports are still generated locally in app/coverage/"
+          echo "To enable Codecov: Add CODECOV_TOKEN to repository secrets"
 
       - name: Coverage Summary
         run: |

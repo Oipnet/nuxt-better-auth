@@ -1,7 +1,8 @@
 # Nuxt Better Auth
 
-![Tests](https://github.com/username/nuxt-better-auth/workflows/Code%20Quality%20&%20Tests/badge.svg)
-[![codecov](https://codecov.io/gh/username/nuxt-better-auth/branch/main/graph/badge.svg)](https://codecov.io/gh/username/nuxt-better-auth)
+![Tests](https://github.com/Oipnet/nuxt-better-auth/workflows/Code%20Quality%20&%20Tests/badge.svg)
+![Coverage](https://img.shields.io/badge/coverage-local%20reports-green)
+![TypeScript](https://img.shields.io/badge/TypeScript-✅%20No%20Errors-blue)
 
 A modern authentication system built with Nuxt 3, Better Auth, and a comprehensive UI component library.
 
@@ -92,3 +93,35 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## 📊 Testing & Coverage
+
+### Run Tests
+```bash
+# Run all tests
+npm test
+
+# Run tests with coverage
+npm run test:coverage
+
+# Open coverage report in browser
+npm run test:coverage:open
+
+# Run tests in watch mode
+npm run test:watch
+```
+
+### Coverage Reports
+Local coverage reports are generated in `app/coverage/`:
+- **HTML Report**: `app/coverage/index.html` - Interactive coverage browser
+- **LCOV Report**: `app/coverage/lcov.info` - For CI/CD integration  
+- **JSON Report**: `app/coverage/coverage-final.json` - Programmatic access
+
+### Quality Scripts
+```bash
+# Run full quality check (lint + typecheck + tests)
+npm run quality
+
+# Auto-fix formatting and linting issues
+npm run quality:fix
+```
