@@ -8,6 +8,12 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
   ],
+  components: [
+    {
+      path: '~/components',
+      pathPrefix: false,
+    },
+  ],
   i18n: {
     customRoutes: 'config',
     lazy: true,
