@@ -1,41 +1,41 @@
 <script setup lang="ts">
-const { locale, locales } = useI18n();
-const switchLocalePath = useSwitchLocalePath();
+const { locale, locales } = useI18n()
+const switchLocalePath = useSwitchLocalePath()
 
 const availableLocales = computed(() => {
-  return locales.value.filter(i => i.code !== locale.value);
-});
+  return locales.value.filter(i => i.code !== locale.value)
+})
 
 const currentLocale = computed(() => {
-  return locales.value.find(i => i.code === locale.value);
-});
+  return locales.value.find(i => i.code === locale.value)
+})
 
-const isOpen = ref(false);
+const isOpen = ref(false)
 
 // Fermer le dropdown quand on clique en dehors
-const dropdownRef = ref<HTMLElement>();
+const dropdownRef = ref<HTMLElement>()
 
 onClickOutside(dropdownRef, () => {
-  isOpen.value = false;
-});
+  isOpen.value = false
+})
 
 // Icônes pour les langues
 const getLanguageIcon = (code: string) => {
   const icons = {
     'fr-FR': '🇫🇷',
-    'en-US': '🇺🇸',
-  };
-  return icons[code as keyof typeof icons] || '🌐';
-};
+    'en-US': '🇺🇸'
+  }
+  return icons[code as keyof typeof icons] || '🌐'
+}
 </script>
 
 <template>
   <div ref="dropdownRef" class="relative inline-block text-left">
     <!-- Bouton pour ouvrir/fermer le dropdown -->
     <button
-      @click="isOpen = !isOpen"
       class="inline-flex items-center justify-center w-full px-3 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out"
       :class="{ 'ring-2 ring-indigo-500': isOpen }"
+      @click="isOpen = !isOpen"
     >
       <span class="mr-2 text-base">{{
         getLanguageIcon(currentLocale?.code || '')
@@ -76,8 +76,8 @@ const getLanguageIcon = (code: string) => {
             v-for="availableLocale in availableLocales"
             :key="availableLocale.code"
             :to="switchLocalePath(availableLocale.code)"
-            @click="isOpen = false"
             class="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-900 transition duration-150 ease-in-out"
+            @click="isOpen = false"
           >
             <span class="mr-3 text-base">{{
               getLanguageIcon(availableLocale.code)

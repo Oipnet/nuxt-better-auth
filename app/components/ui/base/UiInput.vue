@@ -4,11 +4,11 @@
     :type="type"
     :placeholder="placeholder"
     :value="modelValue"
-    @input="handleInput"
-    @blur="$emit('blur', $event)"
     :class="inputClasses"
     v-bind="$attrs"
-  />
+    @input="handleInput"
+    @blur="$emit('blur', $event)"
+  >
 </template>
 
 <script setup lang="ts">
@@ -25,45 +25,45 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   type: 'text',
   variant: 'default',
-  size: 'md',
-});
+  size: 'md'
+})
 
 const emit = defineEmits<{
   'update:modelValue': [value: string];
   blur: [event: Event];
-}>();
+}>()
 
 const handleInput = (event: Event) => {
-  const target = event.target as HTMLInputElement;
-  emit('update:modelValue', target.value);
-};
+  const target = event.target as HTMLInputElement
+  emit('update:modelValue', target.value)
+}
 
 const inputClasses = computed(() => {
   const baseClasses =
-    'relative block w-full px-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 transition duration-150 ease-in-out';
+    'relative block w-full px-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 transition duration-150 ease-in-out'
 
   const sizeClasses = {
     sm: 'py-1 text-sm',
     md: 'py-2 sm:text-sm',
-    lg: 'py-3 text-base',
-  };
+    lg: 'py-3 text-base'
+  }
 
   const variantClasses = {
     default: 'rounded-md',
     'rounded-top': 'rounded-t-md rounded-b-none',
     'rounded-bottom': 'rounded-b-md rounded-t-none',
-    'rounded-full': 'rounded-full',
-  };
+    'rounded-full': 'rounded-full'
+  }
 
   const errorClasses = props.error
     ? 'border-red-500 focus:border-red-500 focus:ring-red-500'
-    : '';
+    : ''
 
   return [
     baseClasses,
     sizeClasses[props.size],
     variantClasses[props.variant],
-    errorClasses,
-  ].join(' ');
-});
+    errorClasses
+  ].join(' ')
+})
 </script>

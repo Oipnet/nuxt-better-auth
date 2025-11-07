@@ -1,6 +1,6 @@
-import { useField, useForm } from 'vee-validate';
-import { toTypedSchema } from '@vee-validate/zod';
-import type { z } from 'zod';
+import { useField, useForm } from 'vee-validate'
+import { toTypedSchema } from '@vee-validate/zod'
+import type { z } from 'zod'
 
 type AuthBaseValues = {
   email: string;
@@ -14,29 +14,29 @@ type UseAuthFormOptions<TSchema extends z.AnyZodObject> = {
 
 export const useAuthForm = <TSchema extends z.AnyZodObject>({
   schema,
-  initialValues,
+  initialValues: _initialValues
 }: UseAuthFormOptions<TSchema>) => {
   type FormValues = z.infer<TSchema> & AuthBaseValues;
 
   const { handleSubmit } = useForm<FormValues>({
-    validationSchema: toTypedSchema(schema),
-  });
+    validationSchema: toTypedSchema(schema)
+  })
 
   const { value: email, errorMessage: emailError } = useField<
     FormValues['email']
   >('email', undefined, {
-    validateOnValueUpdate: true,
-  });
+    validateOnValueUpdate: true
+  })
 
   const { value: password, errorMessage: passwordError } = useField<
     FormValues['password']
   >('password', undefined, {
-    validateOnValueUpdate: true,
-  });
+    validateOnValueUpdate: true
+  })
 
   const registerField = <TKey extends Extract<keyof FormValues, string>>(
     key: TKey
-  ) => useField<FormValues[TKey]>(key);
+  ) => useField<FormValues[TKey]>(key)
 
   return {
     handleSubmit,
@@ -44,6 +44,6 @@ export const useAuthForm = <TSchema extends z.AnyZodObject>({
     password,
     emailError,
     passwordError,
-    registerField,
-  };
-};
+    registerField
+  }
+}

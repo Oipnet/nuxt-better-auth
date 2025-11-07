@@ -16,10 +16,10 @@
         >
           <UiInput
             id="email"
+            v-model="email"
             name="email"
             type="email"
             variant="rounded-top"
-            v-model="email"
             :placeholder="t('auth.signIn.emailLabel')"
             :error="emailError"
           />
@@ -33,10 +33,10 @@
         >
           <UiInput
             id="password"
+            v-model="password"
             name="password"
             type="password"
             variant="rounded-bottom"
-            v-model="password"
             :placeholder="t('auth.signIn.passwordLabel')"
             :error="passwordError"
           />
@@ -59,24 +59,26 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from '#imports';
-import { useSignInForm } from '~/composables/useSignInForm';
+import { useI18n } from '#imports'
+import { useSignInForm } from '~/composables/useSignInForm'
 
 // Interface pour les props (si besoin d'options dans le futur)
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Props {
   // On peut ajouter des props si nécessaire, par exemple:
   // redirectUrl?: string
   // showSignUpLink?: boolean
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = withDefaults(defineProps<Props>(), {
   // Valeurs par défaut si nécessaire
-});
+})
 
 // Composable pour la traduction
-const { t } = useI18n();
+const { t } = useI18n()
 
 // Logique métier du formulaire de connexion
 const { email, password, emailError, passwordError, handleSignIn } =
-  useSignInForm();
+  useSignInForm()
 </script>

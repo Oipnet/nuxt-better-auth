@@ -1,7 +1,7 @@
-import { useI18n, useLocalePath } from '#imports';
-import { signUp } from '~/lib/auth-client';
-import { useAuthForm } from '~/composables/useAuthForm';
-import { createSignUpSchema } from '~/utils/authSchemas';
+import { useI18n, useLocalePath } from '#imports'
+import { signUp } from '~/lib/auth-client'
+import { useAuthForm } from '~/composables/useAuthForm'
+import { createSignUpSchema } from '~/utils/authSchemas'
 
 type SignUpHandler = (payload: {
   name: string;
@@ -16,26 +16,26 @@ type UseSignUpFormOptions = {
 };
 
 export const useSignUpForm = (options: UseSignUpFormOptions = {}) => {
-  const { t } = useI18n();
-  const localePath = useLocalePath();
-  const signUpEmail = options.signUpEmail ?? signUp.email;
-  const callbackURL = options.defaultCallbackURL ?? localePath('dashboard');
+  const { t } = useI18n()
+  const localePath = useLocalePath()
+  const signUpEmail = options.signUpEmail ?? signUp.email
+  const callbackURL = options.defaultCallbackURL ?? localePath('dashboard')
 
   const { handleSubmit, email, password, emailError, passwordError, registerField } = useAuthForm({
     schema: createSignUpSchema(t),
-    initialValues: { name: '' },
-  });
+    initialValues: { name: '' }
+  })
 
-  const { value: name, errorMessage: nameError } = registerField('name');
+  const { value: name, errorMessage: nameError } = registerField('name')
 
   const handleSignUp = handleSubmit(async (values) => {
     await signUpEmail({
       name: values.name,
       email: values.email,
       password: values.password,
-      callbackURL,
-    });
-  });
+      callbackURL
+    })
+  })
 
   return {
     name,
@@ -44,6 +44,6 @@ export const useSignUpForm = (options: UseSignUpFormOptions = {}) => {
     nameError,
     emailError,
     passwordError,
-    handleSignUp,
-  };
-};
+    handleSignUp
+  }
+}

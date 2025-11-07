@@ -33,50 +33,50 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   placement: 'bottom-right',
   width: 'trigger',
-  offset: 2,
-});
+  offset: 2
+})
 
-const isOpen = ref(false);
-const dropdownRef = ref<HTMLElement>();
+const isOpen = ref(false)
+const dropdownRef = ref<HTMLElement>()
 
 const toggle = () => {
-  isOpen.value = !isOpen.value;
-};
+  isOpen.value = !isOpen.value
+}
 
 const close = () => {
-  isOpen.value = false;
-};
+  isOpen.value = false
+}
 
 // Fermer le dropdown quand on clique en dehors
-onClickOutside(dropdownRef, close);
+onClickOutside(dropdownRef, close)
 
 const dropdownClasses = computed(() => {
   const baseClasses =
-    'absolute z-50 bg-white border border-gray-200 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none';
+    'absolute z-50 bg-white border border-gray-200 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none'
 
   const placementClasses = {
     'bottom-left': 'left-0 mt-2 origin-top-left',
     'bottom-right': 'right-0 mt-2 origin-top-right',
     'top-left': 'left-0 mb-2 bottom-full origin-bottom-left',
-    'top-right': 'right-0 mb-2 bottom-full origin-bottom-right',
-  };
+    'top-right': 'right-0 mb-2 bottom-full origin-bottom-right'
+  }
 
   const widthClasses = {
     auto: 'w-auto',
     trigger: 'w-full min-w-[140px]',
     sm: 'w-48',
     md: 'w-56',
-    lg: 'w-64',
-  };
+    lg: 'w-64'
+  }
 
   return [
     baseClasses,
     placementClasses[props.placement],
-    widthClasses[props.width],
-  ].join(' ');
-});
+    widthClasses[props.width]
+  ].join(' ')
+})
 
 const contentClasses = computed(() => {
-  return 'py-1';
-});
+  return 'py-1'
+})
 </script>

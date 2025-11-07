@@ -1,7 +1,7 @@
-import { useI18n, useLocalePath } from '#imports';
-import { signIn } from '~/lib/auth-client';
-import { useAuthForm } from '~/composables/useAuthForm';
-import { createSignInSchema } from '~/utils/authSchemas';
+import { useI18n, useLocalePath } from '#imports'
+import { signIn } from '~/lib/auth-client'
+import { useAuthForm } from '~/composables/useAuthForm'
+import { createSignInSchema } from '~/utils/authSchemas'
 
 type SignInHandler = (payload: {
   email: string;
@@ -15,28 +15,28 @@ type UseSignInFormOptions = {
 };
 
 export const useSignInForm = (options: UseSignInFormOptions = {}) => {
-  const { t } = useI18n();
-  const localePath = useLocalePath();
-  const signInEmail = options.signInEmail ?? signIn.email;
-  const callbackURL = options.defaultCallbackURL ?? localePath('dashboard');
+  const { t } = useI18n()
+  const localePath = useLocalePath()
+  const signInEmail = options.signInEmail ?? signIn.email
+  const callbackURL = options.defaultCallbackURL ?? localePath('dashboard')
 
   const { handleSubmit, email, password, emailError, passwordError } = useAuthForm({
-    schema: createSignInSchema(t),
-  });
+    schema: createSignInSchema(t)
+  })
 
   const handleSignIn = handleSubmit(async (values) => {
     await signInEmail({
       email: values.email,
       password: values.password,
-      callbackURL,
-    });
-  });
+      callbackURL
+    })
+  })
 
   return {
     email,
     password,
     emailError,
     passwordError,
-    handleSignIn,
-  };
-};
+    handleSignIn
+  }
+}

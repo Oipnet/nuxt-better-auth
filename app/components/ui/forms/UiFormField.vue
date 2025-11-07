@@ -33,18 +33,18 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   hideLabel: false,
   required: false,
-  labelSize: 'md',
-});
+  labelSize: 'md'
+})
 
 const labelClasses = computed(() => {
-  const baseClasses = 'block font-medium text-gray-700';
+  const baseClasses = 'block font-medium text-gray-700'
 
   const sizeClasses = {
     sm: 'text-sm',
     md: 'text-sm',
-    lg: 'text-base',
-  };
+    lg: 'text-base'
+  }
 
-  return [baseClasses, sizeClasses[props.labelSize]].join(' ');
-});
+  return [baseClasses, sizeClasses[props.labelSize]].join(' ')
+})
 </script>

@@ -21,12 +21,12 @@
           r="10"
           stroke="currentColor"
           stroke-width="4"
-        ></circle>
+        />
         <path
           class="opacity-75"
           fill="currentColor"
           d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-        ></path>
+        />
       </svg>
     </div>
     <slot />
@@ -50,22 +50,22 @@ const props = withDefaults(defineProps<Props>(), {
   type: 'button',
   disabled: false,
   loading: false,
-  fullWidth: false,
-});
+  fullWidth: false
+})
 
 const tag = computed(() => {
-  return props.to ? resolveComponent('NuxtLinkLocale') : 'button';
-});
+  return props.to ? resolveComponent('NuxtLinkLocale') : 'button'
+})
 
 const buttonClasses = computed(() => {
   const baseClasses =
-    'inline-flex items-center justify-center font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed';
+    'inline-flex items-center justify-center font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 transition duration-150 ease-in-out cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed'
 
   const sizeClasses = {
     sm: 'px-3 py-1.5 text-sm',
     md: 'px-4 py-2 text-sm',
-    lg: 'px-6 py-3 text-base',
-  };
+    lg: 'px-6 py-3 text-base'
+  }
 
   const variantClasses = {
     primary:
@@ -77,16 +77,16 @@ const buttonClasses = computed(() => {
     ghost:
       'text-indigo-600 bg-transparent hover:bg-indigo-50 focus:ring-indigo-500 border border-transparent',
     danger:
-      'text-white bg-red-600 hover:bg-red-700 focus:ring-red-500 border border-transparent',
-  };
+      'text-white bg-red-600 hover:bg-red-700 focus:ring-red-500 border border-transparent'
+  }
 
-  const widthClasses = props.fullWidth ? 'w-full' : '';
+  const widthClasses = props.fullWidth ? 'w-full' : ''
 
   return [
     baseClasses,
     sizeClasses[props.size],
     variantClasses[props.variant],
-    widthClasses,
-  ].join(' ');
-});
+    widthClasses
+  ].join(' ')
+})
 </script>

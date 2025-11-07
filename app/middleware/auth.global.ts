@@ -1,14 +1,14 @@
-import { useLocalePath } from '#imports';
-import { useSession } from '~/lib/auth-client';
+import { useLocalePath } from '#imports'
+import { useSession } from '~/lib/auth-client'
 
-export default defineNuxtRouteMiddleware(async (to, from) => {
+export default defineNuxtRouteMiddleware(async (to, _from) => {
   if (!to.name?.toString().startsWith('dashboard')) {
-    return;
+    return
   }
 
-  const { data: session } = await useSession(useFetch);
+  const { data: session } = await useSession(useFetch)
   if (!session.value) {
-    const localePath = useLocalePath();
-    return navigateTo(localePath('sign-in'));
+    const localePath = useLocalePath()
+    return navigateTo(localePath('sign-in'))
   }
-});
+})

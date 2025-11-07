@@ -6,13 +6,13 @@ export default defineNuxtConfig({
     '@vee-validate/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
-    '@vueuse/nuxt',
+    '@vueuse/nuxt'
   ],
   components: [
     {
       path: '~/components',
-      pathPrefix: false,
-    },
+      pathPrefix: false
+    }
   ],
   i18n: {
     customRoutes: 'config',
@@ -22,13 +22,13 @@ export default defineNuxtConfig({
       {
         code: 'fr-FR',
         name: 'Français',
-        file: 'fr-FR.json',
+        file: 'fr-FR.json'
       },
       {
         code: 'en-US',
         name: 'English',
-        file: 'en-US.json',
-      },
+        file: 'en-US.json'
+      }
     ],
     defaultLocale: 'fr-FR',
     strategy: 'prefix_except_default',
@@ -37,16 +37,16 @@ export default defineNuxtConfig({
     pages: {
       'sign-in': {
         'fr-FR': '/connexion',
-        'en-US': '/sign-in',
+        'en-US': '/sign-in'
       },
       'sign-up': {
         'fr-FR': '/inscription',
-        'en-US': '/sign-up',
+        'en-US': '/sign-up'
       },
       dashboard: {
         'fr-FR': '/tableau-de-bord',
-        'en-US': '/dashboard',
-      },
-    },
-  },
-});
+        'en-US': '/dashboard'
+      }
+    }
+  }
+})
