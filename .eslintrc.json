@@ -1,0 +1,16 @@
+{
+  "root": true,
+  "extends": [
+    "@nuxtjs/eslint-config-typescript"
+  ],
+  "rules": {
+    // Règles personnalisées pour la qualité
+    "complexity": ["warn", 10],
+    "max-lines-per-function": ["warn", 50],
+    "max-depth": ["warn", 4],
+    "no-console": "warn",
+    "prefer-const": "error",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+  }
+}
