@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "signIn": "Connexion",
+    "signUp": "Créer un compte",
+    "signOut": "Se déconnecter"
+  },
+  "home": {
+    "title": "Accueil",
+    "description": "Bienvenue sur votre page d'accueil !"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Connexion",
+      "emailLabel": "Email",
+      "passwordLabel": "Mot de passe",
+      "submit": "Se connecter",
+      "linkToSignUp": "Créer un compte"
+    },
+    "signUp": {
+      "title": "Créer un compte",
+      "nameLabel": "Nom",
+      "emailLabel": "Email",
+      "passwordLabel": "Mot de passe",
+      "submit": "Créer un compte",
+      "linkToSignIn": "Déjà un compte ?"
+    },
+    "validation": {
+      "emailRequired": "Adresse email requise",
+      "emailInvalid": "Adresse email invalide",
+      "passwordRequired": "Mot de passe requis",
+      "passwordMin": "Mot de passe trop court",
+      "nameRequired": "Nom requis",
+      "nameMin": "Nom trop court"
+    }
+  },
+  "dashboard": {
+    "title": "Tableau de bord",
+    "description": "Bienvenue sur votre tableau de bord !"
+  }
+}

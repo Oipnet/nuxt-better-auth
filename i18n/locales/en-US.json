@@ -1,0 +1,42 @@
+{
+  "navigation": {
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "signIn": "Sign in",
+    "signUp": "Create account",
+    "signOut": "Sign out"
+  },
+  "home": {
+    "title": "Home",
+    "description": "Welcome to your home page!"
+  },
+  "auth": {
+    "signIn": {
+      "title": "Sign in",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Sign in",
+      "linkToSignUp": "Create an account"
+    },
+    "signUp": {
+      "title": "Create an account",
+      "nameLabel": "Name",
+      "emailLabel": "Email",
+      "passwordLabel": "Password",
+      "submit": "Create account",
+      "linkToSignIn": "Already have an account?"
+    },
+    "validation": {
+      "emailRequired": "Email is required",
+      "emailInvalid": "Invalid email address",
+      "passwordRequired": "Password is required",
+      "passwordMin": "Password is too short",
+      "nameRequired": "Name is required",
+      "nameMin": "Name is too short"
+    }
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "description": "Welcome to your dashboard!"
+  }
+}
