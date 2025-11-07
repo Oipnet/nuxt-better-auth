@@ -2,7 +2,12 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@vee-validate/nuxt', '@nuxtjs/i18n'],
+  modules: [
+    '@vee-validate/nuxt',
+    '@nuxtjs/i18n',
+    '@nuxtjs/tailwindcss',
+    '@vueuse/nuxt',
+  ],
   i18n: {
     customRoutes: 'config',
     lazy: true,

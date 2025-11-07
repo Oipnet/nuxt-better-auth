@@ -1,20 +1,69 @@
 <template>
-  <div>
-    <h1>{{ t('auth.signIn.title') }}</h1>
-    <form novalidate @submit.prevent="handleSignIn">
-      <div>
-        <label for="email">{{ t('auth.signIn.emailLabel') }}</label>
-        <input id="email" type="email" v-model="email" />
-        <p v-if="emailError">{{ emailError }}</p>
-      </div>
-      <div>
-        <label for="password">{{ t('auth.signIn.passwordLabel') }}</label>
-        <input id="password" type="password" v-model="password" />
-        <p v-if="passwordError">{{ passwordError }}</p>
-      </div>
-      <button type="submit">{{ t('auth.signIn.submit') }}</button>
-    </form>
-    <NuxtLinkLocale to="sign-up">{{ t('auth.signIn.linkToSignUp') }}</NuxtLinkLocale>
+  <div
+    class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+  >
+    <div class="max-w-md w-full">
+      <UiCard variant="elevated" padding="lg">
+        <template #header>
+          <h1 class="text-center text-3xl font-extrabold text-gray-900">
+            {{ t('auth.signIn.title') }}
+          </h1>
+        </template>
+
+        <form class="space-y-6" novalidate @submit="handleSignIn">
+          <div class="space-y-4">
+            <UiFormField
+              id="email"
+              :label="t('auth.signIn.emailLabel')"
+              :error="emailError"
+              hide-label
+            >
+              <UiInput
+                id="email"
+                name="email"
+                type="email"
+                variant="rounded-top"
+                v-model="email"
+                :placeholder="t('auth.signIn.emailLabel')"
+                :error="emailError"
+              />
+            </UiFormField>
+
+            <UiFormField
+              id="password"
+              :label="t('auth.signIn.passwordLabel')"
+              :error="passwordError"
+              hide-label
+            >
+              <UiInput
+                id="password"
+                name="password"
+                type="password"
+                variant="rounded-bottom"
+                v-model="password"
+                :placeholder="t('auth.signIn.passwordLabel')"
+                :error="passwordError"
+              />
+            </UiFormField>
+          </div>
+
+          <UiButton type="submit" variant="primary" size="md" full-width>
+            {{ t('auth.signIn.submit') }}
+          </UiButton>
+        </form>
+
+        <template #footer>
+          <div class="text-center">
+            <NuxtLinkLocale
+              to="sign-up"
+              class="font-medium text-indigo-600 hover:text-indigo-500 transition duration-150 ease-in-out"
+            >
+              {{ t('auth.signIn.linkToSignUp') }}
+            </NuxtLinkLocale>
+          </div>
+        </template>
+      </UiCard>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
@@ -24,5 +73,6 @@ import { useSignInForm } from '~/composables/useSignInForm';
 const localePath = useLocalePath();
 const { t } = useI18n();
 
-const { email, password, emailError, passwordError, handleSignIn } = useSignInForm();
+const { email, password, emailError, passwordError, handleSignIn } =
+  useSignInForm();
 </script>

@@ -8,7 +8,32 @@
   },
   "home": {
     "title": "Home",
-    "description": "Welcome to your home page!"
+    "description": "Welcome to your home page!",
+    "hero": {
+      "title": "Modern & Secure Authentication",
+      "subtitle": "Discover Better Auth, the next-generation authentication solution for your web applications.",
+      "getStarted": "Get Started",
+      "signIn": "Sign In"
+    },
+    "features": {
+      "title": "Why Choose Better Auth?",
+      "subtitle": "A complete solution that meets all your authentication needs.",
+      "security": {
+        "title": "Enhanced Security",
+        "description": "Advanced protection with encryption and multi-level validation."
+      },
+      "performance": {
+        "title": "Optimal Performance",
+        "description": "Ultra-fast response times and optimized architecture."
+      },
+      "experience": {
+        "title": "User Experience",
+        "description": "Intuitive and smooth interface for your users."
+      }
+    },
+    "footer": {
+      "copyright": "© 2025 Better Auth. All rights reserved."
+    }
   },
   "auth": {
     "signIn": {
@@ -20,11 +45,13 @@
     },
     "signUp": {
       "title": "Create an account",
+      "subtitle": "Create your account to get started",
       "nameLabel": "Name",
       "emailLabel": "Email",
       "passwordLabel": "Password",
       "submit": "Create account",
-      "linkToSignIn": "Already have an account?"
+      "linkToSignIn": "Sign in",
+      "alreadyHaveAccount": "Already have an account?"
     },
     "validation": {
       "emailRequired": "Email is required",

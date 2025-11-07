@@ -20,25 +20,23 @@ export const useAuthForm = <TSchema extends z.AnyZodObject>({
 
   const { handleSubmit } = useForm<FormValues>({
     validationSchema: toTypedSchema(schema),
-    initialValues: {
-      email: '',
-      password: '',
-      ...(initialValues ?? {}),
-    } as FormValues,
   });
 
-  const {
-    value: email,
-    errorMessage: emailError,
-  } = useField<FormValues['email']>('email');
+  const { value: email, errorMessage: emailError } = useField<
+    FormValues['email']
+  >('email', undefined, {
+    validateOnValueUpdate: true,
+  });
 
-  const {
-    value: password,
-    errorMessage: passwordError,
-  } = useField<FormValues['password']>('password');
+  const { value: password, errorMessage: passwordError } = useField<
+    FormValues['password']
+  >('password', undefined, {
+    validateOnValueUpdate: true,
+  });
 
-  const registerField = <TKey extends Extract<keyof FormValues, string>>(key: TKey) =>
-    useField<FormValues[TKey]>(key);
+  const registerField = <TKey extends Extract<keyof FormValues, string>>(
+    key: TKey
+  ) => useField<FormValues[TKey]>(key);
 
   return {
     handleSubmit,

@@ -8,7 +8,32 @@
   },
   "home": {
     "title": "Accueil",
-    "description": "Bienvenue sur votre page d'accueil !"
+    "description": "Bienvenue sur votre page d'accueil !",
+    "hero": {
+      "title": "Authentification moderne et sécurisée",
+      "subtitle": "Découvrez Better Auth, la solution d'authentification nouvelle génération pour vos applications web.",
+      "getStarted": "Commencer",
+      "signIn": "Se connecter"
+    },
+    "features": {
+      "title": "Pourquoi choisir Better Auth ?",
+      "subtitle": "Une solution complète qui répond à tous vos besoins d'authentification.",
+      "security": {
+        "title": "Sécurité renforcée",
+        "description": "Protection avancée avec chiffrement et validation multi-niveaux."
+      },
+      "performance": {
+        "title": "Performance optimale",
+        "description": "Temps de réponse ultra-rapides et architecture optimisée."
+      },
+      "experience": {
+        "title": "Expérience utilisateur",
+        "description": "Interface intuitive et fluide pour vos utilisateurs."
+      }
+    },
+    "footer": {
+      "copyright": "© 2025 Better Auth. Tous droits réservés."
+    }
   },
   "auth": {
     "signIn": {
@@ -20,11 +45,13 @@
     },
     "signUp": {
       "title": "Créer un compte",
+      "subtitle": "Créez votre compte pour commencer",
       "nameLabel": "Nom",
       "emailLabel": "Email",
       "passwordLabel": "Mot de passe",
       "submit": "Créer un compte",
-      "linkToSignIn": "Déjà un compte ?"
+      "linkToSignIn": "Se connecter",
+      "alreadyHaveAccount": "Déjà un compte ?"
     },
     "validation": {
       "emailRequired": "Adresse email requise",
