@@ -97,6 +97,7 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 ## 📊 Testing & Coverage
 
 ### Run Tests
+
 ```bash
 # Run all tests
 npm test
@@ -112,12 +113,15 @@ npm run test:watch
 ```
 
 ### Coverage Reports
+
 Local coverage reports are generated in `app/coverage/`:
+
 - **HTML Report**: `app/coverage/index.html` - Interactive coverage browser
-- **LCOV Report**: `app/coverage/lcov.info` - For CI/CD integration  
+- **LCOV Report**: `app/coverage/lcov.info` - For CI/CD integration
 - **JSON Report**: `app/coverage/coverage-final.json` - Programmatic access
 
 ### Quality Scripts
+
 ```bash
 # Run full quality check (lint + typecheck + tests)
 npm run quality
