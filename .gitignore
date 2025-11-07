@@ -27,3 +27,8 @@ logs
 *.db
 *.sqlite
 *.sqlite3
+
+# Coverage reports
+coverage/
+app/coverage/
+*.lcov

@@ -15,6 +15,7 @@
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:coverage": "vitest --coverage",
+    "test:coverage:open": "vitest --coverage && open app/coverage/index.html",
     "test:watch": "vitest --watch",
     "quality": "npm run lint && npm run typecheck && npm run test:coverage",
     "quality:fix": "npm run format && npm run lint -- --fix"
