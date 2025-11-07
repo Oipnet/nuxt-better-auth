@@ -6,7 +6,9 @@
         <div class="flex justify-between items-center h-16">
           <!-- Logo -->
           <div class="flex items-center">
-            <h2 class="text-xl font-bold text-indigo-600">Better Auth</h2>
+            <h2 class="text-xl font-bold text-indigo-600">
+              Better Auth
+            </h2>
           </div>
 
           <!-- Navigation -->
@@ -159,7 +161,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import { useI18n } from '#imports';
+import { useI18n } from '#imports'
 
-const { t } = useI18n();
+const { t } = useI18n()
 </script>

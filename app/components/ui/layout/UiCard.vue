@@ -24,66 +24,66 @@ interface Props {
 const props = withDefaults(defineProps<Props>(), {
   variant: 'default',
   padding: 'md',
-  rounded: 'lg',
-});
+  rounded: 'lg'
+})
 
 const cardClasses = computed(() => {
-  const baseClasses = 'bg-white overflow-hidden';
+  const baseClasses = 'bg-white overflow-hidden'
 
   const variantClasses = {
     default: '',
     elevated: 'shadow-lg',
-    outlined: 'border border-gray-200',
-  };
+    outlined: 'border border-gray-200'
+  }
 
   const roundedClasses = {
     none: '',
     sm: 'rounded-sm',
     md: 'rounded-md',
     lg: 'rounded-lg',
-    xl: 'rounded-xl',
-  };
+    xl: 'rounded-xl'
+  }
 
   return [
     baseClasses,
     variantClasses[props.variant],
-    roundedClasses[props.rounded],
-  ].join(' ');
-});
+    roundedClasses[props.rounded]
+  ].join(' ')
+})
 
 const headerClasses = computed(() => {
   const paddingClasses = {
     none: '',
     sm: 'px-3 py-2',
     md: 'px-6 py-4',
-    lg: 'px-8 py-6',
-  };
+    lg: 'px-8 py-6'
+  }
 
-  return ['border-b border-gray-200', paddingClasses[props.padding]].join(' ');
-});
+  return ['border-b border-gray-200', paddingClasses[props.padding]].join(' ')
+})
 
 const bodyClasses = computed(() => {
   const paddingClasses = {
     none: '',
     sm: 'p-3',
     md: 'p-6',
-    lg: 'p-8',
-  };
+    lg: 'p-8'
+  }
 
-  return paddingClasses[props.padding];
-});
+  return paddingClasses[props.padding]
+})
 
 const footerClasses = computed(() => {
   const paddingClasses = {
     none: '',
     sm: 'px-3 py-2',
     md: 'px-6 py-4',
-    lg: 'px-8 py-6',
-  };
+    lg: 'px-8 py-6'
+  }
 
   return [
     'border-t border-gray-200 bg-gray-50',
-    paddingClasses[props.padding],
-  ].join(' ');
-});
+    paddingClasses[props.padding]
+  ].join(' ')
+})
 </script>

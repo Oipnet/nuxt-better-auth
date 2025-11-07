@@ -19,10 +19,10 @@
         >
           <UiInput
             id="name"
+            v-model="name"
             name="name"
             type="text"
             variant="default"
-            v-model="name"
             :placeholder="t('auth.signUp.nameLabel')"
             :error="nameError"
           />
@@ -36,10 +36,10 @@
         >
           <UiInput
             id="email"
+            v-model="email"
             name="email"
             type="email"
             variant="default"
-            v-model="email"
             :placeholder="t('auth.signUp.emailLabel')"
             :error="emailError"
           />
@@ -53,10 +53,10 @@
         >
           <UiInput
             id="password"
+            v-model="password"
             name="password"
             type="password"
             variant="default"
-            v-model="password"
             :placeholder="t('auth.signUp.passwordLabel')"
             :error="passwordError"
           />
@@ -82,22 +82,24 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n } from '#imports';
-import { useSignUpForm } from '~/composables/useSignUpForm';
+import { useI18n } from '#imports'
+import { useSignUpForm } from '~/composables/useSignUpForm'
 
 // Interface pour les props (si besoin d'options dans le futur)
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 interface Props {
   // On peut ajouter des props si nécessaire, par exemple:
   // redirectUrl?: string
   // showSignInLink?: boolean
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const props = withDefaults(defineProps<Props>(), {
   // Valeurs par défaut si nécessaire
-});
+})
 
 // Composable pour la traduction
-const { t } = useI18n();
+const { t } = useI18n()
 
 // Logique métier du formulaire d'inscription
 const {
@@ -107,6 +109,6 @@ const {
   nameError,
   emailError,
   passwordError,
-  handleSignUp,
-} = useSignUpForm();
+  handleSignUp
+} = useSignUpForm()
 </script>

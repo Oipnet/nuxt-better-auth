@@ -6,7 +6,9 @@
         <div class="flex justify-between items-center h-16">
           <!-- Logo/Titre -->
           <div class="flex items-center">
-            <h1 class="text-xl font-semibold text-gray-900">Better Auth</h1>
+            <h1 class="text-xl font-semibold text-gray-900">
+              Better Auth
+            </h1>
           </div>
 
           <!-- Actions utilisateur -->
@@ -30,15 +32,15 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n, useLocalePath, useRouter } from '#imports';
-import { signOut } from '~/lib/auth-client';
+import { useI18n, useLocalePath, useRouter } from '#imports'
+import { signOut } from '~/lib/auth-client'
 
-const { t } = useI18n();
-const router = useRouter();
-const localePath = useLocalePath();
+const { t } = useI18n()
+const router = useRouter()
+const localePath = useLocalePath()
 
 const handleLogout = async () => {
-  await signOut();
-  router.push(localePath('index'));
-};
+  await signOut()
+  router.push(localePath('index'))
+}
 </script>

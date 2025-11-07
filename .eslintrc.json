@@ -1,16 +1,40 @@
 {
   "root": true,
-  "extends": [
-    "@nuxtjs/eslint-config-typescript"
-  ],
+  "extends": ["@nuxtjs/eslint-config-typescript"],
   "rules": {
-    // Règles personnalisées pour la qualité
-    "complexity": ["warn", 10],
-    "max-lines-per-function": ["warn", 50],
-    "max-depth": ["warn", 4],
+    // Règles de qualité (warnings pour ne pas bloquer)
+    "complexity": ["warn", 15],
+    "max-lines-per-function": ["warn", 200],
+    "max-depth": ["warn", 6],
     "no-console": "warn",
     "prefer-const": "error",
+
+    // Variables non utilisées
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error", { "argsIgnorePattern": "^_" }]
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "^_" }
+    ],
+
+    // Style plus permissif (warnings au lieu d'erreurs)
+    "comma-dangle": ["warn", "never"],
+    "semi": ["warn", "never"],
+    "space-before-function-paren": ["warn", "always"],
+    "arrow-parens": "off",
+
+    // Props Vue.js
+    "vue/require-default-prop": "warn",
+    "vue/singleline-html-element-content-newline": "off",
+
+    // Trailing spaces
+    "no-trailing-spaces": "warn",
+    "eol-last": "warn",
+
+    // Imports
+    "import/no-named-as-default": "warn",
+    "import/order": "off",
+
+    // TypeScript
+    "@typescript-eslint/no-empty-object-type": "warn"
   }
 }

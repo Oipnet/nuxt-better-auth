@@ -4,7 +4,9 @@
       <h1 class="text-3xl font-bold text-gray-900 mb-4">
         {{ t('dashboard.title') }}
       </h1>
-      <p class="text-gray-600 mb-6">{{ t('dashboard.description') }}</p>
+      <p class="text-gray-600 mb-6">
+        {{ t('dashboard.description') }}
+      </p>
 
       <!-- Actions temporaires -->
       <div class="flex items-center space-x-4 pt-4 border-t border-gray-200">
@@ -23,20 +25,20 @@
 </template>
 
 <script setup lang="ts">
-import { useI18n, useLocalePath, useRouter } from '#imports';
-import { signOut } from '~/lib/auth-client';
+import { useI18n, useLocalePath, useRouter } from '#imports'
+import { signOut } from '~/lib/auth-client'
 
 // Utiliser le layout authentifié
 definePageMeta({
-  layout: 'authenticated',
-});
+  layout: 'authenticated'
+})
 
-const { t } = useI18n();
-const router = useRouter();
-const localePath = useLocalePath();
+const { t } = useI18n()
+const router = useRouter()
+const localePath = useLocalePath()
 
 const handleLogout = async () => {
-  await signOut();
-  router.push(localePath('index'));
-};
+  await signOut()
+  router.push(localePath('index'))
+}
 </script>

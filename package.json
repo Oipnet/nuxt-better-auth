@@ -10,7 +10,8 @@
     "postinstall": "nuxt prepare",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "lint": "nuxt lint",
+    "lint": "eslint . --ext .js,.ts,.vue --ignore-path .gitignore",
+    "lint:fix": "eslint . --ext .js,.ts,.vue --fix --ignore-path .gitignore",
     "typecheck": "nuxt typecheck",
     "test": "vitest",
     "test:ui": "vitest --ui",
@@ -18,7 +19,7 @@
     "test:coverage:open": "vitest --coverage && open app/coverage/index.html",
     "test:watch": "vitest --watch",
     "quality": "npm run lint && npm run typecheck && npm run test:coverage",
-    "quality:fix": "npm run format && npm run lint -- --fix"
+    "quality:fix": "npm run format && npm run lint:fix"
   },
   "dependencies": {
     "@nuxtjs/i18n": "^9.1.1",
@@ -36,15 +37,20 @@
   },
   "devDependencies": {
     "@nuxt/test-utils": "^3.20.1",
+    "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@prettier/plugin-pug": "^3.4.2",
     "@types/better-sqlite3": "^7.6.13",
+    "@typescript-eslint/eslint-plugin": "^8.46.3",
+    "@typescript-eslint/parser": "^8.46.3",
     "@vitest/coverage-v8": "^3.2.4",
     "@vue/test-utils": "^2.4.6",
+    "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
     "happy-dom": "^20.0.10",
     "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
     "vitest": "^3.2.4"
   }
 }
