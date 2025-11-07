@@ -37,6 +37,8 @@
     "@nuxt/test-utils": "^3.20.1",
     "@nuxtjs/tailwindcss": "^6.14.0",
     "@prettier/plugin-pug": "^3.4.2",
+    "@types/better-sqlite3": "^7.6.13",
+    "@vitest/coverage-v8": "^3.2.4",
     "@vue/test-utils": "^2.4.6",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-prettier": "^5.5.4",
